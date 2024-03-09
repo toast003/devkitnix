@@ -105,7 +105,7 @@
       buildPhase = "true";
       installPhase = ''
         mkdir -p $out
-        cp -r $src/{devkitARM,libgba,libnds,libctru,libmirko,liborcus,portlibs,tools} $out
+        cp -r $src/{devkitARM,libgba,libnds,libctru,libmirko,liborcus,portlibs,tools,examples} $out
         rm -rf $out/pacman
       '';
     };
