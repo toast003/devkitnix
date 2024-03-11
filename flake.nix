@@ -10,10 +10,10 @@
     pkgs = import nixpkgs {system = "x86_64-linux";};
     imageA64 = pkgs.dockerTools.pullImage {
       imageName = "devkitpro/devkita64";
-      imageDigest = "sha256:70db4c954eea43be5f1bc64c8882154126c99f47927ecb1e6b27fa18004fc961";
-      sha256 = "a05LU5jF5KxQdqWJv+4b3EBRlVCZjBGx69WpFL57wP4=";
+      imageDigest = "sha256:fec55807a9f84d457e8bc814cf9b63785756aad2b979a43a47ae92b7ac23336d";
+      sha256 = "sha256-c81gYwoeODcp77Gy/krmJhe3Y8CEmEUd4gSPry09gLs=";
       finalImageName = "devkitpro/devkita64";
-      finalImageTag = "20221113";
+      finalImageTag = "20240224";
     };
     imageARM = pkgs.dockerTools.pullImage {
       imageName = "devkitpro/devkitarm";
@@ -32,7 +32,10 @@
     extractDocker = image:
       pkgs.vmTools.runInLinuxVM (
         pkgs.runCommand "docker-preload-image" {
-          memSize = 10 * 1024;
+          # After updating the switch image the vm
+          # started to run out of space. Since it
+          # has an tmpfs fs I just gave it more ram
+          memSize = 10 * 1536;
           buildInputs = [
             pkgs.curl
             pkgs.kmod
