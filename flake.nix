@@ -17,10 +17,10 @@
     };
     imageARM = pkgs.dockerTools.pullImage {
       imageName = "devkitpro/devkitarm";
-      imageDigest = "sha256:695d1eb865ca4b908b1f5c4de777b9eef0f927680f0c0654b07721f1df908606";
-      sha256 = "U2Xkt4IYUeU00w/FzlvySzG5lFL2R7kN8sjxL0EEKD4=";
+      imageDigest = "sha256:2ee5e6ecdc768aa7fb8f2e37be2e27ce33299e081caac20a0a2675cdc791cf32";
+      sha256 = "sha256-KUiKhA3QhMR9cIQC82FI0AgE+Ud7dAXY50xSn5oWZzI=";
       finalImageName = "devkitpro/devkitarm";
-      finalImageTag = "20221115";
+      finalImageTag = "20240202";
     };
     imagePPC = pkgs.dockerTools.pullImage {
       imageName = "devkitpro/devkitppc";
