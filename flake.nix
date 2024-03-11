@@ -24,10 +24,10 @@
     };
     imagePPC = pkgs.dockerTools.pullImage {
       imageName = "devkitpro/devkitppc";
-      imageDigest = "sha256:d88e21c1a7b5f8070ba7a15aa892e395f118ded9803b0f8223a3d29ba279fff3";
-      sha256 = "nVtz/9mbYveKbvTMj/39EzND7qiLkjBHfqSOgT6SBUY=";
+      imageDigest = "sha256:654446a7ae7a6dc88baf8bdec9ae446cdda2b7e5d995c8e5b50d35ec4271ba6c";
+      sha256 = "sha256-uAuZUkF+vfcJG5spmglT+DQPUBA00wHy+/G5kOhCPBA=";
       finalImageName = "devkitpro/devkitppc";
-      finalImageTag = "20220821";
+      finalImageTag = "20240220";
     };
     extractDocker = image:
       pkgs.vmTools.runInLinuxVM (
@@ -119,7 +119,7 @@
       nativeBuildInputs = [pkgs.autoPatchelfHook];
       buildInputs = [
         pkgs.stdenv.cc.cc
-        pkgs.ncurses5
+        pkgs.ncurses6
         pkgs.expat
         pkgs.xz
       ];
